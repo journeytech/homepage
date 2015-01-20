@@ -1,5 +1,5 @@
 """
-Django settings for journeytech project.
+Django settings for root project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.7/topics/settings/
@@ -50,9 +50,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'journeytech.urls'
+ROOT_URLCONF = 'root.urls'
 
-WSGI_APPLICATION = 'journeytech.wsgi.application'
+WSGI_APPLICATION = 'root.wsgi.application'
 
 
 # Database
