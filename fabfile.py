@@ -242,7 +242,7 @@ class Deploy(object):
 
     @classmethod
     def install_bower_component(cls):
-        cls.run_virtualenv("cd %s; python manage.py bower_install" % cls.release_dir)
+        cls.run_virtualenv("cd %s; python manage.py bower_install -- --allow-root" % cls.release_dir)
 
     @classmethod
     def collect_current_statics(cls):
@@ -332,6 +332,10 @@ class Deploy(object):
         cls.run("ln -s %s/node_modules %s/node_modules" % (cls.share_dir, cls.release_dir))
 
     @classmethod
+    def install_bower(cls):
+        cls.run("npm install -g bower")
+
+    @classmethod
     def setup(cls):
         cls.init()
         cls.mkdirs()
@@ -342,6 +346,7 @@ class Deploy(object):
         cls.create_virtualenv()
         cls.install_mysql_dev()
         cls.install_supervisor()
+        cls.install_bower()
 
     @classmethod
     def update_file_path(cls):

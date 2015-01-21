@@ -3,4 +3,4 @@
 .idea
 bower_components/
 npm-debug.log
-static/
+/static/
