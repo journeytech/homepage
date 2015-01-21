@@ -32,7 +32,7 @@ $(document).ready(function () {
 	});
 
 	// Start work gallery
-	$('#Grid').MixItUp();
+	$('#Grid').mixItUp();
 
 	// Start Main Content Slider
 	$('#main-slider').flexslider({
