@@ -1,13 +1,13 @@
 /* Custom Scripts */
 $(document).ready(function () {
-		
+
 	// Start One Page Scrolling
 	$('.top-menu').singlePageNav({
 		offset: 40,
 		filter: ':not(.external)',
 	});
 
-    $('.navbar .nav a').on('click', function(){ 
+    $('.navbar .nav a').on('click', function(){
         if($('.navbar-toggle').css('display') !='none'){
             $(".navbar-toggle").trigger( "click" );
         }
@@ -19,7 +19,7 @@ $(document).ready(function () {
 	$('#videoArea').parallax("50%", 0.1);
 	$('#clientsArea').parallax("50%", 0.1);
 
-	// Start main image 
+	// Start main image
 	var viewHeight = $(window).height();
 	$("#main-slider .bg-img").css({
 		'height': viewHeight
@@ -30,15 +30,15 @@ $(document).ready(function () {
 			'height': viewHeight
 		});
 	});
-	
+
 	// Start work gallery
-	$('#Grid').mixitup();
-	
+	$('#Grid').MixItUp();
+
 	// Start Main Content Slider
 	$('#main-slider').flexslider({
 		animation: "fade",
   	slideshowSpeed: 3000,
-    pauseOnHover: false, 
+    pauseOnHover: false,
 		useCSS: false,
 		directionNav: true,
 		controlNav: false,
@@ -46,7 +46,7 @@ $(document).ready(function () {
 		prevText: "<span class='fa fa-caret-left'></span>",
 		nextText: "<span class='fa fa-caret-right'></span>",
 	});
-	
+
 	// Start testimonials Slider
 	$('#testimonials-slider').flexslider({
 		animation: "slide",
@@ -57,7 +57,7 @@ $(document).ready(function () {
 		prevText: "<span class='fa fa-caret-left'></span>",
 		nextText: "<span class='fa fa-caret-right'></span>",
 	});
-	
+
 	// Start Clients slider
 	$('#clients-slider').flexslider({
         animation: "slide",
@@ -75,7 +75,7 @@ $(document).ready(function () {
           $('body').removeClass('loading');
         }
       });
-	
+
 	// Start Header Animation
 	$(window).scroll(function () {
 		if ($(document).scrollTop() == 0) {
@@ -86,15 +86,15 @@ $(document).ready(function () {
 	});
 
 	// Start ToolTip
-	$('[data-toggle=tooltip]').tooltip() 
-	
+	$('[data-toggle=tooltip]').tooltip()
+
 	// Start PoPover
 	$('[data-toggle=popover]').popover()
 
 	// prettyPhoto script start here
     $('a[data-gal]').each(function() {
         $(this).attr('rel', $(this).data('gal'));
-    });     
+    });
     $("a[data-rel^='prettyPhoto']").prettyPhoto({animationSpeed:'slow',theme:'light_square',slideshow:false,overlay_gallery: false,social_tools:false,deeplinking:false});
-					
-});	
+
+});
