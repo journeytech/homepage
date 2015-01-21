@@ -114,10 +114,10 @@ BOWER_COMPONENTS_ROOT = BASE_DIR
 
 BOWER_INSTALLED_APPS = (
     'mixitup#2.1.7',
-    'prettyphoto#d0a7a048508f0c4e045a85a5964d45678e196f21',
+    'https://github.com/scaron/prettyphoto.git#d0a7a048508f0c4e045a85a5964d45678e196f21',
     'bootstrap#3.3.2',
     'underscore#1.7.0',
-    'FlexSlider#8b3766e026926ed199c2118199fda8a3ab7f418b',
+    'https://github.com/woothemes/FlexSlider.git#8b3766e026926ed199c2118199fda8a3ab7f418b',
     'parallax#2.1.3',
     'jquery#2.1.3',
     'components-font-awesome#4.2.0',
