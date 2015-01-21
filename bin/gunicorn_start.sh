@@ -1,15 +1,15 @@
 #!/bin/bash
 
-DEPLOY_DIR=/var/www/tangthuvien.vn
+DEPLOY_DIR=/var/www/journeytech.vn
 CURRENT_DIR=$DEPLOY_DIR/current
-NAME="tangthuvien"                                # Name of the application
+NAME="journeytech"                                # Name of the application
 DJANGODIR=$CURRENT_DIR         		          # Django project directory
 SOCKFILE=$DEPLOY_DIR/shared/run/gunicorn.sock	          # we will communicte using this unix socket
 USER=www-data                                     # the user to run as
 GROUP=www-data                                    # the group to run as
 NUM_WORKERS=8                                     # how many worker processes should Gunicorn spawn
-DJANGO_SETTINGS_MODULE=tangthuvien.settings       # which settings file should Django use
-DJANGO_WSGI_MODULE=tangthuvien.wsgi               # WSGI module name
+DJANGO_SETTINGS_MODULE=root.settings       # which settings file should Django use
+DJANGO_WSGI_MODULE=root.wsgi               # WSGI module name
 
 echo "Starting $NAME"
 
