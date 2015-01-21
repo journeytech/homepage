@@ -1,3 +1,6 @@
 *.pyc
 *.sqlite3
 .idea
+bower_components/
+npm-debug.log
+static/

@@ -93,6 +93,7 @@ class Deploy(object):
         run("mkdir -p %s/run" % cls.share_dir)
         run("mkdir -p %s/static" % cls.share_dir)
         run("mkdir -p %s/media" % cls.share_dir)
+        run("mkdir -p %s/bower_components" % cls.share_dir)
         run("mkdir -p %s/components" % cls.share_dir)
         run("mkdir -p %s/node_modules" % cls.share_dir)
         run("mkdir -p %s/media/uploads" % cls.share_dir)
@@ -122,6 +123,7 @@ class Deploy(object):
         cls.run("rm -f %s" % cls.bin_dir)
         cls.run("ln -s %s/bin %s" % (cls.release_dir, cls.bin_dir))
         cls.run("ln -s %s/components %s/components" % (cls.share_dir, cls.release_dir))
+        cls.run("ln -s %s/bower_components %s/bower_components" % (cls.share_dir, cls.release_dir))
         cls.run("ln -s %s %s/env" % (cls.virtualenv_dir, cls.release_dir))
         cls.run("ln -s %s %s/program" % (cls.program_dir, cls.release_dir))
         cls.run("ln -s %s %s/log" % (cls.log_dir, cls.release_dir))
@@ -239,6 +241,10 @@ class Deploy(object):
         cls.run_virtualenv("cd %s; python manage.py collectstatic --noinput" % cls.release_dir)
 
     @classmethod
+    def install_bower_component(cls):
+        cls.run_virtualenv("cd %s; python manage.py bower_install" % cls.release_dir)
+
+    @classmethod
     def collect_current_statics(cls):
         cls.run_virtualenv("cd %s; python manage.py collectstatic --noinput" % cls.current_dir)
 
@@ -349,6 +355,7 @@ class Deploy(object):
         cls.checkout_source(current_time)
         cls.install_requirements()
         cls.run_migration()
+        cls.install_bower_component()
         cls.collect_statics()
         # cls.combine_django_messages()
         cls.copy_system_config_files()

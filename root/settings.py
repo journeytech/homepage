@@ -39,10 +39,12 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     'django.contrib.staticfiles',
 
     'django_extensions',
     'djangobower',
+    'common',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -111,7 +113,30 @@ STATICFILES_FINDERS = (
 BOWER_COMPONENTS_ROOT = BASE_DIR
 
 BOWER_INSTALLED_APPS = (
-    'jquery',
-    'underscore',
-    'bootstrap',
+    'mixitup#2.1.7',
+    'prettyphoto#d0a7a048508f0c4e045a85a5964d45678e196f21',
+    'bootstrap#3.3.2',
+    'underscore#1.7.0',
+    'FlexSlider#8b3766e026926ed199c2118199fda8a3ab7f418b',
+    'parallax#2.1.3',
+    'jquery#2.1.3',
+    'components-font-awesome#4.2.0',
 )
+
+# List of callables that know how to import templates from various sources.
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+)
+TEMPLATE_CONTEXT_PROCESSORS =(
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.core.context_processors.tz',
+    'django.contrib.messages.context_processors.messages',
+    'common.context_processors.site_name',
+)
+
+SITE_ID = 1
